@@ -5,5 +5,5 @@ authors:
   - name <tel@jklm.no>
 
 targets:
-  shards:
-    main: src/autolan.cr
+  autoplan:
+    main: src/autoplan.cr
