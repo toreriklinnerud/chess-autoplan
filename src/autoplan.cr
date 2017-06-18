@@ -3,6 +3,7 @@ require "json"
 
 require "./chess"
 require "./plan"
+require "./datapot"
 
 class Autoplan
   def initialize

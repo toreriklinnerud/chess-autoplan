@@ -1,29 +1,21 @@
 class Chess
   getter :token
 
-  @data_pot : Hash(String, JSON::Type) | Nil
+  @datapot : Datapot | Nil
 
   def initialize(@token : String)
   end
 
   def current_usage
-    data_pot["usedWithUnit"].to_s.sub(",", ".").sub("GB", "").to_f
+    datapot.current_usage
   end
 
   def current_size
-    data_pot["size"].as(Float64).to_i
+    datapot.current_size
   end
 
-  def data_pot
-    @data_pot ||= fetch_data_pot
-  end
-
-  def fetch_data_pot
-    plan_data = json_request("/InternalService.asmx/loadInitalData")
-    string = String.from_json(plan_data, root: "d")
-    parsed = JSON.parse(string)
-    data = JSON.parse(parsed["data"].as_s)
-    data["dataPot"].as_h
+  def datapot
+    @datapot ||= Datapot.new(json_request("/InternalService.asmx/loadInitalData"))
   end
 
   def change_plan(plan)
