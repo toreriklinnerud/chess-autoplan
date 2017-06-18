@@ -1,9 +1,8 @@
 require "http/client"
 require "json"
 
-require "./chess"
+require "./chess_api"
 require "./plan"
-require "./datapot"
 
 class Autoplan
   def initialize
@@ -28,7 +27,7 @@ class Autoplan
   end
 
   def chess
-    @chess ||= Chess.new
+    @chess ||= ChessAPI.new
   end
 end
 
