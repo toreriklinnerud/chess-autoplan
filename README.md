@@ -1,12 +1,12 @@
 ## Chess Autoplan
 
-Automatically adjust the plan size depending on current usage.
+Automatically adjust 4G data plan size depending on the current's month usage.
 
-It selects the smallest plan that has at least 0.5 GB to spare.
+It selects the smallest plan that has at least 0.5 GB to spare. If the current plan already is the best, no action is taken.
 
 To run:
 ```sh
-  CHESS_USERNAME=<123> CHESS_PASSWORD=<zyz> crystal src/autoplan.rb
+  CHESS_USERNAME=<123> CHESS_PASSWORD=<zyz> crystal src/autoplan.cr
 ```
 
 You should see something like this:
