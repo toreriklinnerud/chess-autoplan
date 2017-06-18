@@ -41,7 +41,7 @@ class Chess
 
   def self.fetch_token
     print "Authenticating... "
-    error("CHESS_USERNAME and CHESS_PASSWORD must be set ENV.") unless ENV.has_key?("CHESS_USERNAME") && ENV.has_key?("CHESS_PASSWORD")
+    error("CHESS_USERNAME and CHESS_PASSWORD must be set") unless ENV.has_key?("CHESS_USERNAME") && ENV.has_key?("CHESS_PASSWORD")
     login_form = File.read("./src/login_form").sub("{{username}}", ENV["CHESS_USERNAME"]).sub("{{password}}", ENV["CHESS_PASSWORD"])
     response = HTTP::Client.post_form(Chess.url("/?mode=login"), login_form)
     cookies = response.cookies
