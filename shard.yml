@@ -1,0 +1,9 @@
+name: autoplan
+version: 0.1.0
+
+authors:
+  - name <tel@jklm.no>
+
+targets:
+  shards:
+    main: src/autolan.cr
