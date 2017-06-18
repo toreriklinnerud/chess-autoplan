@@ -28,7 +28,7 @@ class Autoplan
   end
 
   def chess
-    @chess ||= Chess.new(Chess.fetch_token)
+    @chess ||= Chess.new
   end
 end
 
