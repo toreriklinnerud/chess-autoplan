@@ -15,7 +15,7 @@ Current usage is 2.1 GB
 The 5 GB Plan is still the best plan
 ```
 
-Note that the password but be URI encoded (replace spaces with a plus)
+Note that the password must be URI encoded (replace spaces with a plus)
 
 To run test:
 ```sh
