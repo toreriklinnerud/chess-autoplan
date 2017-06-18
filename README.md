@@ -6,7 +6,8 @@ It selects the smallest plan that has at least 0.5 GB to spare. If the current p
 
 To run:
 ```sh
-  CHESS_USERNAME=<123> CHESS_PASSWORD=<zyz> crystal src/autoplan.cr
+shards build
+CHESS_USERNAME=<123> CHESS_PASSWORD=<zyz> bin/autoplan
 ```
 
 You should see something like this:
