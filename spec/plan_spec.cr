@@ -18,6 +18,7 @@ describe Plan do
   describe "#of_size" do
     it "selects the plan of the given size" do
       Plan.of_size(5).should eq Plan::P5
+      Plan.of_size(110).should eq Plan::PUnknown
     end
   end
 end

@@ -18,7 +18,9 @@ class Autoplan
 
   def optimize_plan
     puts "Current usage is #{chess.current_usage} GB"
-    if best_plan != current_plan
+    if current_plan == Plan::PUnknown
+      puts "Current plan is unknown (#{chess.current_size}GB), leaving it alone"
+    elsif best_plan != current_plan
       puts "Switching from the #{current_plan.to_s} to the #{best_plan.to_s}"
       puts chess.change_plan(best_plan)
     else

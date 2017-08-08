@@ -4,6 +4,7 @@ class Plan
   P10  = Plan.new(10, "515")
   P20  = Plan.new(20, "516")
   P100 = Plan.new(100, "517")
+  PUnknown = Plan.new(0, "U")
 
   PLANS = [P1, P5, P10, P20, P100]
 
@@ -17,7 +18,7 @@ class Plan
   end
 
   def self.of_size(size)
-    PLANS.find { |plan| plan.size == size }.as(Plan)
+    PLANS.find { |plan| plan.size == size } || PUnknown
   end
 
   def to_s
